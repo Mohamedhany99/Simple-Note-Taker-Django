@@ -6,7 +6,10 @@
 
 * activate the virtual environment for windows: (source venv/Scripts/activate) for linux: (source venv/bin/activate)
 
-* create .env file and add the SECRET_KEY as a environment variable
+* create .env file 
+    * add the SECRET_KEY as a environment variable
+
+    * add the DEBUG=True in case of development stage
 
 * install the requirements (pip install -r requirements.txt)
 
