@@ -33,3 +33,5 @@
 * you can find the home page when accessing: http://localhost:8000/
 
 * you can find the admin dashboard: http://localhost:8000/admin/
+
+* you can find swagger documentation: http://localhost:8000/api/schema/swagger-ui/
