@@ -136,3 +136,10 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# OpenAI Settings
+OPENAI_API_KEY = config("OPENAI_API_KEY")
+OPENAI_URL = config("OPENAI_URL")
+OPENAI_MODEL_NAME = config("OPENAI_MODEL_NAME")
+OPENAI_MAX_TOKENS = config("OPENAI_MAX_TOKENS", cast=int)
+OPENAI_STREAM = config("OPENAI_STREAM", cast=bool)
