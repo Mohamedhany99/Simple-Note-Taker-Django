@@ -34,6 +34,18 @@ you need to add env variables for the settings related to OpenAI.
     * OPENAI_MODEL_NAME: Model name(string)
     * OPENAI_MAX_TOKENS: Integer
     * OPENAI_STREAM:Boolean
+# OpenAI Azure Settings
+* The used config is the Azure openai engine
+    * OPENAI_AZURE_API_KEY = api key(string)
+    * OPENAI_AZURE_URL = URL(string)
+    * OPENAI_AZURE_API_BASE_URL = URL(string)
+    * OPENAI_AZURE_ENGINE = (string)
+    * OPENAI_AZURE_API_VERSION = (string)
+    * OPENAI_AZURE_MODEL_NAME = Model name(string)
+    * OPENAI_AZURE_MAX_TOKENS = (int)
+    * OPENAI_AZURE_STREAM : (bool)
+    * OPENAI_AZURE_EMBEDDINGS_ENGINE : (string)
+
 
 # Notes for navigation
 
