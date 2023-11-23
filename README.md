@@ -26,9 +26,16 @@
 * run the application
     * python manage.py runserver
 
+# OpenAI Integration
+you need to add env variables for the settings related to OpenAI.
+* In the SummaryAiView I could not test it due to lake of OpenAI API key
+    * OPENAI_API_KEY: openai api key(string)
+    * OPENAI_URL: openai URL(string)
+    * OPENAI_MODEL_NAME: Model name(string)
+    * OPENAI_MAX_TOKENS: Integer
+    * OPENAI_STREAM:Boolean
 
-
-## Notes for navigation
+# Notes for navigation
 
 * you can find the home page when accessing: http://localhost:8000/
 

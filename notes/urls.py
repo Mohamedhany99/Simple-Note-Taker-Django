@@ -14,4 +14,9 @@ urlpatterns = [
         views.DeleteNoteView.as_view(),
         name="delete-view",
     ),
+    path(
+        "summary-note/<int:note_pk>/",
+        views.SummaryAiView.as_view(),
+        name="summary-view",
+    ),
 ]
