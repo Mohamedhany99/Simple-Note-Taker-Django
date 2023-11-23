@@ -133,7 +133,7 @@ dmypy.json
 
 api_key.txt
 *.ini
-*.json
+
 cognitron/*.json
 __pycache__
 
