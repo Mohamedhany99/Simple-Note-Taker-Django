@@ -3,29 +3,44 @@ from .serializers import NoteSerializer
 from .models import Note
 from rest_framework.response import Response
 from rest_framework import status, exceptions
-from openai import ChatCompletion
+import openai
+from django.conf import settings
 
 # Create your views here.
 
 
 class SummaryAiView(generics.GenericAPIView):
+    """Summary AI API"""
+
     def get(self, request, note_pk):
         try:
             note = Note.objects.get(pk=note_pk)
             note_content = note.content
-            completion = ChatCompletion.create(
-                model="gpt-3.5-turbo",
+
+            openai.api_key = settings.OPENAI_AZURE_API_KEY
+            openai.api_type = "azure"
+            openai.api_base = settings.OPENAI_AZURE_API_BASE_URL
+            openai.api_version = settings.OPENAI_AZURE_API_VERSION
+
+            completion = openai.ChatCompletion.create(
+                engine=settings.OPENAI_AZURE_ENGINE,
+                model=settings.OPENAI_MODEL_NAME,
                 messages=[
                     {"role": "system", "content": "You are a helpful assistant."},
                     {"role": "user", "content": f"Summarize: {note_content}"},
                 ],
+                temperature=0.7,
+                top_p=0.95,
+                stream=settings.OPENAI_STREAM,
             )
+            print("hey iam here")
             summary = completion["choices"][0]["message"]["content"]
             return Response(data={"summary": summary}, status=status.HTTP_200_OK)
 
         except Note.DoesNotExist:
             raise exceptions.NotFound("Cannot Find Note")
-        # except:
+        # except Exception as e:
+        #     print(e)
         #     raise exceptions.NotAcceptable("Something Went Wrong")
 
 
